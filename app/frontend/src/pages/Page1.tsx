@@ -33,7 +33,7 @@ const Page1 = () => {
             <div className="text-white font-bold text-3xl ">
               <Link
                 to={"/ad"}
-                className="w-100 h-100 bg-orange-500 flex items-center justify-center"
+                className="w-100 h-150 bg-orange-500 flex items-center justify-center"
               >
                 AD
               </Link>
