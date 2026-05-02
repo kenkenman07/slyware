@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { apiClient } from "../api/apiClient";
 
 const Page1 = () => {
   const [selectedPhoto, setSelectedPhoto] = useState(0);
@@ -9,14 +10,24 @@ const Page1 = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowModal(true);
-    }, 3000);
+    }, 1000);
 
     return () => clearTimeout(timer);
   }, []);
 
-  const handleAnswer = () => {
-    if (selectedPhoto === 3) navigate("/correct");
-    else navigate("/in");
+  const handleAnswer = async () => {
+    if (selectedPhoto === 3) {
+      await apiClient.countUp("correct");
+      navigate("/correct");
+    } else {
+      await apiClient.countUp("incorrect");
+      navigate("/in");
+    }
+  };
+
+  const handleAd = async () => {
+    await apiClient.countUp("ad");
+    navigate("/ad");
   };
 
   return (
@@ -31,12 +42,12 @@ const Page1 = () => {
 
           {showModal && (
             <div className="text-white font-bold text-3xl ">
-              <Link
-                to={"/ad"}
+              <button
+                onClick={handleAd}
                 className="w-100 h-150 bg-orange-500 flex items-center justify-center"
               >
                 AD
-              </Link>
+              </button>
             </div>
           )}
 
