@@ -10,7 +10,7 @@ const Page1 = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowModal(true);
-    }, 3700);
+    }, 5800);
 
     return () => clearTimeout(timer);
   }, []);

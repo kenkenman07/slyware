@@ -11,7 +11,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Start />} />
-        <Route path="/1" element={<Page2 />} />
+        <Route path="/1" element={<Page1 />} />
         <Route path="correct" element={<Correct />} />
         <Route path="in" element={<Incorrect />} />
         <Route path="ad" element={<Ad />} />
