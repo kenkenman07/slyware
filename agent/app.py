@@ -12,15 +12,15 @@ async def main():
     )
     agent = Agent(
         task="""
-        1. http://localhost:5174 にアクセスして
+        1. http://host.docker.internal:5174/ にアクセスして
         2. 「回答ページ」へ遷移して
         3. 「3」と表示されているボタンをクリック
         4. 「回答」ボタンを押して
         5. 遷移したページに書いてある文字を教えて
         """,
-        llm=ChatOpenAI(model="gpt-4o-mini"),
+        llm=ChatOpenAI(model="gpt-4o"),
     )
-    result = await agent.run()
+    result = await agent.run(max_steps=7)
     print(result)
 
 asyncio.run(main())
