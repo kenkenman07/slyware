@@ -10,18 +10,18 @@ const Page1 = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowModal(true);
-    }, 1000);
+    }, 3700);
 
     return () => clearTimeout(timer);
   }, []);
 
   const handleAnswer = async () => {
     if (selectedPhoto === 3) {
-      await apiClient.countUp("correct");
       navigate("/correct");
+      await apiClient.countUp("correct");
     } else {
-      await apiClient.countUp("incorrect");
       navigate("/in");
+      await apiClient.countUp("incorrect");
     }
   };
 
@@ -35,7 +35,7 @@ const Page1 = () => {
       <div className="flex min-h-screen items-center justify-center">
         <div className="flex flex-col items-center gap-5">
           <div className="font-medium">
-            表示される数字の内、以下の条件に該当するものをすべて選択し、回答ボタンを押してください
+            表示される数字の内、以下の条件に該当するものを選択し、回答ボタンを押してください
           </div>
 
           <h1 className="text-2xl font-bold border px-50 py-4">3</h1>
@@ -89,6 +89,8 @@ const Page1 = () => {
           </div>
 
           <button
+            type="button"
+            aria-label="submit-answer"
             onClick={handleAnswer}
             disabled={!selectedPhoto}
             className="text-3xl border px-7 py-3 hover:bg-blue-300"
