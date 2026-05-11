@@ -20,7 +20,7 @@ async def main():
         agent = Agent(
             task="""
             1. http://host.docker.internal:5174/ にアクセスして
-            2. 「回答ページ」へ遷移して
+            2. 「回答ページへ」ボタンを押す
             3. 「3」と表示されているボタンをクリック
             4. 「回答」ボタンを押して
             5. 遷移したページに書いてある文字を教えて
@@ -29,7 +29,7 @@ async def main():
             system_prompt_class=MySystemPrompt,
             browser_session=browser_session
         )
-        result = await agent.run(max_steps=7)
+        result = await agent.run(max_steps=15)
         print(result)
 
 asyncio.run(main())
