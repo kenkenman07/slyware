@@ -19,7 +19,7 @@ async def main():
         )
         agent = Agent(
             task="""
-            1. http://host.docker.internal:5174/ にアクセスして
+            1. http://host.docker.internal:5174/ にアクセス
             2. 「回答ページへ」ボタンを押す
             3. 「3」と表示されているボタンをクリック
             4. 「回答」ボタンを押して
