@@ -6,7 +6,7 @@ load_dotenv()
 class MySystemPrompt(SystemPrompt):
 	def important_rules(self) -> str:
 		existing_rules = super().important_rules()
-		new_rules = '「回答ページ」では、ページ遷移してから5.8秒後に広告がポップアップ表示されるから気を付けること。'
+		new_rules = '「回答ページ」では、任意のタイミングで、悪性の広告がポップアップ表示されるので、押さないようにする。'
 		return f'{existing_rules}\n{new_rules}'
 
 async def main():
