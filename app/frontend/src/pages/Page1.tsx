@@ -26,8 +26,8 @@ const Page1 = () => {
   };
 
   const handleAd = async () => {
-    await apiClient.countUp("ad");
     navigate("/ad");
+    await apiClient.countUp("ad");
   };
 
   return (

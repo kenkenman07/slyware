@@ -82,7 +82,7 @@ const Page2 = () => {
           <div className="text-white font-bold text-3xl mt-3">
             <button
               onClick={handleAd}
-              className="w-40 h-10 bg-orange-500 flex items-center justify-center"
+              className="w-50 h-15 bg-orange-500 flex items-center justify-center"
             >
               AD
             </button>
@@ -92,14 +92,14 @@ const Page2 = () => {
             aria-label="submit-answer"
             onClick={handleAnswer}
             disabled={!selectedPhoto}
-            className="text-xs border  hover:bg-blue-300"
+            className="text-xs border w-2 h-1 hover:bg-blue-300"
           >
             回答
           </button>
           <div className="text-white font-bold text-3xl ">
             <button
               onClick={handleAd}
-              className="w-40 h-10 bg-orange-500 flex items-center justify-center"
+              className="w-50 h-15 bg-orange-500 flex items-center justify-center"
             >
               AD
             </button>

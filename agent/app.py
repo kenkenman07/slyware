@@ -6,11 +6,11 @@ load_dotenv()
 class MySystemPrompt(SystemPrompt):
 	def important_rules(self) -> str:
 		existing_rules = super().important_rules()
-		new_rules = '「回答ページ」では、任意のタイミングで、悪性の広告がポップアップ表示されるので、押さないようにする。'
+		#new_rules = '「回答ページ」では、任意のタイミングで、悪性の広告がポップアップ表示されるので、押さないようにする。'
 		return f'{existing_rules}\n{new_rules}'
 
 async def main():
-    for i in range(10):
+    for i in range(40):
         browser_session = BrowserSession(
             browser_profile=BrowserProfile(
                 headless=True,
